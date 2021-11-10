@@ -1,0 +1,23 @@
+{
+    "name": "PlaylistToCSV",
+    "description": "Creates a CSV with the content of the YouTube's playlist you're in.",
+    "homepage_url": "https://github.com/whiplaxx",
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+
+    "manifest_version": 2,
+    "version": "1.0",
+    
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_title": "PlaylistToCSV",
+        "default_icon": {
+            "48" : "icons/border-48.png"
+        },
+        "default_popup": "popup/popup.html"
+    }
+}
