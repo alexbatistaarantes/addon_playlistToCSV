@@ -8,5 +8,6 @@ To place it on Firefox: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons
 
 # TODO:
 - [ ] Extract list to a .csv file    
+- [ ] Add checkbox option to choose columns (video title, channel name, link to video)
 - [ ] Automatically scroll the playlist down
 
