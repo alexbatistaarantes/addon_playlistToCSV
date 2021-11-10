@@ -4,7 +4,15 @@ function listenForClicks() {
     document.addEventListener( "click", (e) => {
         
         function call_listPlaylist( tabs ){
-            browser.tabs.sendMessage( tabs[0].id, { command: "list" } );
+            browser.tabs.sendMessage( tabs[0].id, 
+                {
+                    command: "list",
+                    displayTitle: true,
+                    displayChannel: true,
+                    displayLink: true,
+                    separator: ';'
+                }
+            );
         }
         
         function reportError( error ){
