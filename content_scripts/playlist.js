@@ -14,10 +14,20 @@
         var videos = [];
 
         for( let div_video of div_videos ){
+
+            let title = div_video.querySelector("#video-title").getAttribute("title");
+            
+            let channel = '';
+            try { // in case the video is deleted there's no channel
+                channel = div_video.querySelectorAll(".yt-simple-endpoint.style-scope.yt-formatted-string")[0].innerHTML;
+            }catch{;}
+
+            let link = "youtube.com" + div_video.querySelector("#video-title").getAttribute("href")
+
             video = {
-                "title": div_video.querySelector("#video-title").getAttribute("title"),
-                "channel": div_video.querySelectorAll(".yt-simple-endpoint.style-scope.yt-formatted-string")[0].innerHTML,
-                "link": "youtube.com/" + div_videos[0].querySelector("#video-title").getAttribute("href")
+                "title": title,
+                "channel": channel,
+                "link": link
             };
             videos.push(video);
         }

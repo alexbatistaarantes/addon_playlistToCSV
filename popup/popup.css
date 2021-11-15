@@ -1,5 +1,5 @@
 html, body {
-    width: 100px;
+    width: 400px;
 }
 
 .hidden {
@@ -10,5 +10,7 @@ html, body {
     margin: 3% auto;
     text-align: center;
     cursor: pointer;
+
+    box-shadow: 3px 3px 3px black;
 }
 
