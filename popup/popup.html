@@ -9,24 +9,46 @@
 <body>
 
     <div id="popup-content">
-        <div id="execute-listPlaylist" class="button"> Show playlist </div>
+
+        <div id="form">
+            <div id="columns">
+                <strong> Columns: </strong>
+
+                <input type="checkbox" name="title" checked>
+                <label for="title"> Title </label>
+
+                <input type="checkbox" name="channel" checked>
+                <label for="channel"> Channel</label>
+
+                <input type="checkbox" name="link" checked>
+                <label for="link"> Link </label>
+            </div>
+
+            <label for="separator"> <strong> Separator </strong> </label>
+            <input type="text" name="separator" value=";">
+
+            <div id="button_toClipboard" class="button"> Copy to Clipboard </div>
+            <div id="button_toFile" class="button"> Save to File </div>
+        </div>
+
+        <div id="observations">
+            <strong> Observations </strong>
+            <ul>
+                <li> You must scroll the page until the whole playlist is loaded </li>
+                <li> There may be videos hidden, because it was deleted or is unavailable at your country.
+                    <ul>
+                        <li> Click in the three dots under the playlist name and "Show unabailable videos" </li>
+                        <li> Deleted videos will still have a link. You may found out the video title by searching his id in google. 
+                                For example: <a href="">youtube.com/watch?v=Kr_3pfOUG9c</a> you search "youtube Kr_3pfOUG9c" </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>   
     </div>
     
     <div id="error-content" class="hidden">
         <p> An error occurred.</p>
     </div>
-
-    <strong> Observations </strong>
-    <ul>
-        <li> You must scroll the page until the whole playlist is loaded </li>
-        <li> There may be videos hidden, because it was deleted or is unavailable at your country.
-            <ul>
-                <li> Click in the three dots under the playlist name and "Show unabailable videos" </li>
-                <li> Deleted videos will still have a link. You may found out the video title by searching his id in google. 
-                    For example: youtube.com/watch?v=Kr_3pfOUG9c you search "youtube Kr_3pfOUG9c" </li>
-            </ul>
-        </li>
-    </ul>
 
 </body>
 </html>
