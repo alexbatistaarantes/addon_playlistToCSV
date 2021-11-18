@@ -3,10 +3,26 @@ function listenForClicks() {
     
     document.addEventListener( "click", (e) => {
         
-        function call_listPlaylist( tabs ){
+        let displayTitle = document.querySelector("input[name=title]").checked;
+        let displayChannel = document.querySelector("input[name=channel]").checked;
+        let displayLink = document.querySelector("input[name=link]").checked;
+        let separator = document.querySelector("input[name=separator]").value;
+
+        function listToClipboard( tabs ){
             browser.tabs.sendMessage( tabs[0].id, 
                 {
-                    command: "list",
+                    command: "listToClipboard",
+                    displayTitle: displayTitle,
+                    displayChannel: displayChannel,
+                    displayLink: displayLink,
+                    separator: separator
+                }
+            );
+        }
+        function listToFile( tabs ){
+            browser.tabs.sendMessage( tabs[0].id, 
+                {
+                    command: "listToFile",
                     displayTitle: true,
                     displayChannel: true,
                     displayLink: true,
@@ -14,16 +30,22 @@ function listenForClicks() {
                 }
             );
         }
-        
+
         function reportError( error ){
             console.error(`An error occurred: ${error.messsage}`)
         }
 
-        if( e.target.id == "execute-listPlaylist" ){
+        if( e.target.id == "button_toClipboard" ){
             browser.tabs.query( {active:true, currentWindow:true} )
-                .then( call_listPlaylist )
+                .then( listToClipboard )
                 .catch( reportError );
         }
+        if( e.target.id == "button_toFile" ){
+            browser.tabs.query( {active:true, currentWindow:true} )
+                .then( listToFile )
+                .catch( reportError );
+        }
+
     });
 }
 

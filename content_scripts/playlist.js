@@ -68,6 +68,10 @@
     // handle how to display the a text to the user
     function displayString( str, format="console" ){
         switch(format){
+            case 'clipboard':
+                navigator.clipboard.writeText( str );
+                break;
+            case 'file':
             case 'console':
                 console.log( str );
                 break;
@@ -76,10 +80,19 @@
 
     // When button clicked
     browser.runtime.onMessage.addListener((message) => {
-        if( message.command === "list" ) {
+        if( message.command === "listToClipboard" ) {
             let videos_str = getVideosStr( message.displayTitle, message.displayChannel, message.displayLink, message.separator );
-            displayString( videos_str );
+            displayString( videos_str, format="clipboard" );
+
+        }else if( message.command === "listToFile" ) {
+            let videos_str = getVideosStr( message.displayTitle, message.displayChannel, message.displayLink, message.separator );
+            displayString( videos_str, format="file" );
+
+        }else if( message.command === "listToConsole" ) {
+            let videos_str = getVideosStr( message.displayTitle, message.displayChannel, message.displayLink, message.separator );
+            displayString( videos_str, format="console" );
         }
+
     });
 
 })();

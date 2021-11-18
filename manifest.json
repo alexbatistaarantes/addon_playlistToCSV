@@ -10,7 +10,7 @@
     "version": "1.0",
     
     "permissions": [
-        "activeTab"
+        "activeTab", "clipboardWrite"
     ],
 
     "browser_action": {
