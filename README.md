@@ -1,8 +1,13 @@
 Firefox add-on to create a CSV that list the videos from the Youtube playlist you're current on.
 
-The support methods to get the list is copying to clipboard or saving in a .csv file. Currently only the clipboard one is working.:w
+The support methods to get the list is copying to clipboard or saving in a .csv file. Currently only the clipboard one is working.
 
-To install, download the go to about:addons, click on the gear, Install add-on from file and select the .xpi file 
+To install:
+  - Download the .xpi file: https://github.com/whiplaxx/addon_playlistToCSV/blob/main/web-ext-artifacts/playlisttocsv-1.0-an%2Bfx.xpi
+  - Go to about:addons
+  - Click on the gear and Install add-on from file
+  - Select the .xpi file
+
 To place it on Firefox (for testing): https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#trying_it_out
 
 # TODO:
