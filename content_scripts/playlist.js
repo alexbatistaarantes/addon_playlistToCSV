@@ -72,6 +72,11 @@
                 navigator.clipboard.writeText( str );
                 break;
             case 'file':
+                let file_list = document.createElement("file_list");
+                file_list.href = window.URL.createObjectURL(new Blob([str], {type: "text/plain"}));
+                file_list.download = "list.csv";
+                window.location.href = file_list.href;
+                break;
             case 'console':
                 console.log( str );
                 break;
